@@ -1,0 +1,14 @@
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ilya-quotes-bot
+    restart: unless-stopped
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+    env_file:
+      - .env
+    # Раскомментируйте для отладки
+    # volumes:
+    #   - ./dist:/app/dist
